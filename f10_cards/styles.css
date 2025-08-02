@@ -1,0 +1,44 @@
+body {
+  background-color: pink;
+}
+#playing-cards {
+  margin: 100px auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.card {
+  background-color: white;
+  border-radius: 20px;
+  width: 200px;
+  height: 300px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 30px;
+}
+
+.flipped {
+  transform: rotate(180deg);
+}
+.red {
+  color: red;
+}
+.small {
+  
+}
+.left, .right, .middle {
+	display: flex;
+}
+.middle {
+  font-size: 80px;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.single {
+	justify-content: center;
+}
+.bottom {
+	align-self: flex-end;
+}
