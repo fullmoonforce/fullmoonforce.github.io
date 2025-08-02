@@ -1,0 +1,959 @@
+/* Main 
+Responsive design: fluid grid; flexible images; media queries
+* {} 
+	base level style
+css inheritance: border, margin, padding, background-color
+box-sizing
+	border or content, for precise size planning
+font-size: 62.5% 
+	makes 1rem = 10px, rem is base document font size
+a:
+	order is: link, visited, hover, focus, active 
+flex is one-dimensional: for components
+grid is two-dimensional: for overall page structure */
+
+:root {
+	--main-background-color: #242736;
+	--main-text-color: linen;
+	--color-white: white;
+	--color-black: black;
+	--color-grey: rgba(255, 255, 255, 0.5);
+	--color-red: orangered;
+	--color-crimson-red: crimson;
+	--color-coral: coral;
+	--color-blue: skyblue;
+	--color-earthblue: blue;
+	--color-darkblue: #5a7294;
+	--line-color-violet: rgba(226, 83, 239, 0.75);
+	--line-color-blue: rgba(107, 231, 243, 0.75);
+}
+*, ::before, ::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+html {
+	font-size: 62.5%;
+}
+body {
+	font-family: 'PT Serif', serif;
+	background-color: var(--main-background-color);
+	color: var(--main-text-color);
+	
+	display: grid;
+	grid-template-columns: minmax(2rem, 1fr) minmax(min-content, 94rem) minmax(2rem, 1fr);
+	row-gap: 3rem;
+}
+@media (max-width: 640px){
+	body {
+		grid-template-columns: minmax(2rem, 1fr) minmax(min-content, 94rem) minmax(2rem, 1fr);
+	}
+	html {
+		font-size: 55%;
+	}
+}
+h1 {
+	font-family: 'Anton', 'Oswald', sans-serif;
+}
+h2, h3, h4, h5, h6 {
+	font-family: 'Raleway', sans-serif;
+}
+/* object-fit
+	resizing img or video to fit the container; cover: The image keeps its aspect ratio and fills the given dimension. The image will be clipped to fit */
+img {
+	width: 100%;
+	object-fit: cover;
+}
+hr {
+	margin: 3.5rem 0;
+	/* violet or blue */
+	border: 1px solid var(--line-color-blue);
+	width: 100%;
+}
+em {
+	font-style: normal;
+	font-weight: bold;
+}
+ol, ul {
+	list-style-position: inside;
+}
+a:link {
+	color: var(--main-text-color);
+	text-decoration: none;
+}
+a:visited {
+	color: var(--main-text-color);
+}
+a:hover {
+	color: var(--color-red);	
+}
+
+
+/* Heading section */
+.heading {
+	grid-column: 2 / 3;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	row-gap: 1.5rem;	
+}
+.title {
+	grid-column: 1 / -1;
+	position: relative;	
+}
+#title-name {
+	text-align: center;
+	font-size: 8rem;
+	color: var(--color-red);
+}
+#title-subtitle {
+	text-align: center;
+	font-size: 2.4rem;
+	color: var(--color-red);
+}
+.author {
+	font-family: 'Raleway', sans-serif;
+	font-size: 2rem;
+}
+#author-name a:link {
+	color: var(--main-text-color);
+}
+#author-name a:hover {
+	background-color: var(--color-red);
+	text-decoration: none;
+	cursor: pointer;
+}
+.est-date {
+	color: var(--color-grey);
+}
+.publish-date {
+	text-align: center;
+	color: var(--color-grey);
+}
+.social-icons {
+	font-size: 3rem;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-auto-flow: column;
+	grid-auto-columns: 1fr;
+	align-items: center;
+}
+.social-icons a:link {
+	color: var(--main-text-color);
+}
+.social-icons a:visited {
+	color: var(--main-text-color);
+}
+.social-icons a:hover {
+	color: var(--color-red);
+}
+
+
+/* Blogpost section */
+.main-article {
+	grid-column: 2 / 3;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	gap: 3rem;
+	
+	font-size: 1.8rem;
+	text-align: justify;
+	letter-spacing: 0.6px;
+}
+.blogpost-text p, ul, ol, code {
+	padding-bottom: 1rem;
+	
+}
+/* .blogpost-text p:not(:first-of-type)
+	используется для указания отступа для всех параграфов, кроме первого
+   .blogpost-text p:first-of-type::first-letter
+	так как некоторые blogpost-text используют flex, то вместо .blogpost-text ::first-letter, к которому при flex этот псевдо-элемент не применился бы, нужно использовать p:... */
+.blogpost-text p:not(:first-of-type) {
+	text-indent: 3rem;
+}
+.blogpost-text p:first-of-type::first-letter {
+	font-size: 6rem;
+	color: var(--color-red);
+	float: left;
+	margin-right: 1rem;
+	line-height: 4rem;
+}
+.blogpost-text p:first-of-type {
+	padding-bottom: 2rem;
+}
+
+
+
+/* 12.07.2025 */
+.d1207 {
+	font-size: 1.8rem;
+	column-width: 25rem;
+	letter-spacing: 0.6px;
+	text-align: left;
+	column-gap: 6rem;
+	list-style-position: inside;
+	padding-bottom: 1rem;
+}
+.d1207 em {
+	text-decoration: underline;
+}
+.d1207 .done {
+	text-decoration: line-through;
+	color: var(--color-grey);
+}
+/* ul>li::marker
+	style for list element's marker, selects every <li> element that are direct children of a <ul> element */
+.d1207 >li::marker {
+	color: var(--color-darkblue);
+}
+/* Кнопка показать-скрыть список d1207 */
+.show-ul-checkbox {
+	display: none;
+}
+.show-ul-button {
+	background-color: var(--color-blue);
+	color: var(--color-coral);
+	font-family: 'Raleway', sans-serif;
+	font-size: 1.6rem;
+	text-align: center;
+	text-shadow: 1px 1px 1px var(--color-black);
+	cursor: pointer;
+	padding: 10px 20px;
+	border: 1px solid var(--color-blue);
+	border-radius: 5px;
+	display: block;
+	width: 30rem;
+	margin: 5px;
+	text-decoration: none;
+}
+.show-ul-button:hover {
+	background-color: var(--color-coral);
+	border-color: var(--color-coral);
+	color: var(--color-blue);
+	transition: background-color 0.75s;
+}
+.d1207{
+	display: none;
+}
+.show-ul-checkbox:checked + .show-ul-button + ul {
+	display: block;
+}
+
+
+/* 13.07.2025 */
+dl {
+	padding-left: 3rem;
+	align-self: flex-start;
+}
+dd {
+	margin-inline-start: 3rem;
+}
+/* min-width & max-width instead of width ensures width is fixed, not allowing elements to shrink to the container */
+.table-container table {
+	min-width: 100%;
+	max-width: 850px;
+}
+/* is()
+	here used in table of gradients to specify table, td, th inside of it's parent container's class */
+/* border-collapse: collapse
+	makes table's border common */
+.table-container :is(table, td, th) {
+	border: 1px solid var(--line-color-violet);
+	border-collapse: collapse;
+}
+/* box-shadow & text-shadow */
+.table-container :is(h3) {
+	padding-bottom: 2rem;
+	background: linear-gradient(to right, red, orange, yellow, green, skyblue, blue, purple);
+	text-shadow: 2px 2px 1px var(--color-black);
+}
+.table-container th {
+	text-align: center;
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+}
+/* nth-child()
+	used in table of gradients to specify gradient contained td. If there is different types of childs, nth-of-type() is used instead. */
+.table-container table tr td:nth-child(1) {
+	padding: 0 1rem;
+}
+.table-container table tr td:nth-child(2) {
+	height: 8rem;
+	width: 16rem;
+}
+.rainbow-gradinent {
+	background: linear-gradient(red, orange, yellow, green, skyblue, blue, purple,);
+}
+.lin-grad1 {
+	background: linear-gradient(to right, red, yellow);
+}
+.rad-grad1 {
+	background: radial-gradient(circle closest-side at center, red, yellow 50%, green);
+}
+.rad-grad2 {
+	background: radial-gradient(ellipse farthest-corner at top left, red, yellow 50%, green 50%, brown, green);
+}
+.rad-grad3 {
+	background: radial-gradient(ellipse farthest-side at left, green, orange, skyblue);
+}
+.rad-grad4 {
+	background: radial-gradient(circle farthest-corner at right bottom, red, yellow 50%, black);
+}
+.rad-grad5 {
+	background: radial-gradient(circle farthest-corner at 70% 80%, white, red, brown, yellow);
+}
+.rad-grad6 {
+	background: radial-gradient(circle farthest-side at 100px 200px, red, orange, yellow, green, blue, skyblue, purple);
+}
+.rad-grad7 {
+	background: radial-gradient(circle closest-corner at 90% 20px, black, gold, white);	
+}
+.rep-lin-grad1 {
+	background: repeating-linear-gradient(to right, red, orange 6%, green 6%, blue 9%);
+}
+/* подвижный градиент под движением мышки*/
+@property --gradient-angle {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+.mov-grad1 {
+	background: linear-gradient(var(--gradient-angle), red, blue);
+	transition: --gradient-angle 0.5s;
+}
+.mov-grad1:hover {
+	--gradient-angle: 90deg;
+}
+
+
+/* 14.07.2025 */
+ruby {
+	font-size: 200%;
+}
+#kazumi {
+	height: 400px;
+	width: 100%;
+	background-image: url("master-kazumi.jpg");
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+#narushima {
+	height: 400px;
+	width: 100%;
+	background-image: url("master-narushima.avif");
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+
+
+/* 15.07.2025 */
+#article-fonts span {
+	color: var(--color-white);
+}
+#font-roboto {
+	font-family: 'Roboto';
+}
+#font-open-sans {
+	font-family: 'Open Sans';
+}
+#font-poppins {
+	font-family: 'Poppins';
+}
+#font-lato {
+	font-family: 'Lato';
+}
+#font-barlow 
+{
+	font-family: 'Barlow';
+}
+#font-arial {
+	font-family: 'Arial';
+}
+#font-verdana {
+	font-family: 'Verdana';
+}
+#font-trebuchet-ms {
+	font-family: 'Trebuchet MS';
+}
+#font-times-new-roman {
+	font-family: 'Times New Roman';
+}
+#font-georgia {
+	font-family: 'Georgia';
+}
+#color-theory {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	gap: 10px;
+	align-items: center;
+}
+#color-theory figure {
+
+}
+#color-theory img {
+	display: block;
+	margin: 0 auto;
+	min-width: 256px;
+	max-width: 300px;
+}
+#color-theory figcaption {
+	text-align: center;
+	font-style: italic;
+	color: var(--color-grey);
+}
+.color-box {
+	width: 100px;
+	height: 100px;
+	background-color: var(--color-red);
+	display: inline;
+}
+#color_analog1 {
+	filter: hue-rotate(0deg);
+}
+#color_analog2 {
+	filter: hue-rotate(30deg);
+}
+#color_analog3 {
+	filter: hue-rotate(-30deg);
+}
+#color_comp1 {
+
+}
+#color_comp2 {
+
+	filter: hue-rotate(180deg);
+}
+#color_tri1 {
+	
+}
+#color_tri2 {
+	filter: hue-rotate(120deg);
+}
+#color_tri3 {
+	filter: hue-rotate(240deg);
+}
+#color_mono1 {
+	filter: saturate(100%) brightness(100%) contrast(100%);
+}
+#color_mono2 {
+	filter: saturate(80%) brightness(100%) contrast(60%);
+}
+#color_mono3 {
+	filter: saturate(60%) brightness(100%) contrast(40%);
+}
+
+
+/* 16.07.2025*/
+.d1607 {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	gap: 1rem;
+	align-items: center;
+}
+.d1607 p:first-of-type {
+	border-bottom: 1px dotted var(--line-color-blue);
+}
+.d1607 p:nth-child(3) {
+	color: var(--color-blue);
+}
+.d1607 p:last-of-type {
+	color: var(--color-coral);
+}
+.d1607::selection {
+	background-color: var(--color-crimson-red);
+}
+:is(button, a.button, input[type='submit'], input[type='reset']) {
+  background-color: var(--color-blue);
+  color: var(--color-coral);
+  border: 1px solid var(--color-blue);
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: inline-block;
+  margin: 5px;
+  font-size: 1.6rem;
+  text-align: center;
+  text-shadow: 1px 1px 1px var(--color-black);
+  font-family: 'Raleway', sans-serif;
+}
+:is(button, a.button, input[type='submit'], input[type='reset']):hover {
+  background-color: var(--color-coral);
+  border-color: var(--color-coral);
+  color: var(--color-blue);
+  transition: background-color 0.75s;
+}
+#buttons-grid {
+	display: grid;
+	grid-template-rows: 1fr 1fr;
+	grid-auto-flow: column;
+}
+
+
+/* 17.07 */
+.d1707 a{
+	outline-style: inset;
+	outline-color: var(--color-crimson-red);
+	margin: 3px;
+	padding: 3px;
+}
+#transformation span:nth-of-type(1) {
+	transform: rotate(15deg);
+	display: inline-block;
+}
+#transformation span:nth-of-type(2) {
+	transform: scale(150%);
+	display: inline-block;
+}
+#transformation span:nth-of-type(3) {
+	transform: skew(15deg, -30deg);
+	display: inline-block;
+}
+#transformation span:nth-of-type(4) {
+	transform: translate(-13px, 5px);
+	display: inline-block;
+}
+
+
+/* 18.07 */
+.d1807 ol {
+	text-indent: 4rem;
+	list-style-position: inside;
+}
+
+/* 19.07 */
+#moon-orbit {
+	width: 100%;
+	height: 600px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--color-black);
+ }
+.space {
+  background-color: var(--color-black);
+  width: 200px;
+  height: 200px;
+  position: relative;
+}
+.earth {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: var(--color-earthblue);
+  height: 100px;
+  width: 100px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+/* transform-origin 
+	uses for defining origin point for transform. default is 50% 50%*/
+.orbit {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  transform-origin: 50% 50%;
+  animation: orbit 5s linear infinite;
+}
+@keyframes orbit {
+  0% {
+    transform: rotate(0deg) translate(-50%, -50%);
+  }
+  100% {
+    transform: rotate(360deg) translate(-50%, -50%);
+  }
+}
+.moon {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 30px;
+  height: 30px;
+  background-color: var(--color-grey);
+  z-index: 5;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--color-white);
+}
+
+
+/* 21.07 */
+.grid-container {
+	display: grid;
+	grid-gap: 10px;
+	background-color: var(--color-blue);
+	padding: 10px;
+}
+.grid-container > div {
+	background-color: var(--color-coral);
+	padding: 10px;
+}
+.auto-column {
+	grid-template-columns: auto auto auto;
+	grid-template-rows: auto auto;
+
+	grid-auto-flow: column;
+}
+.auto-row {
+	grid-template-columns: auto auto auto;
+	grid-template-rows: auto auto;
+
+	grid-auto-flow: row;
+}
+.template {
+	grid-template: 50px auto / auto 50px auto;
+}
+.area {
+	grid-template-areas: 
+		'head head . . .'
+		'. title title title .'
+		'body body body body body'
+		'body body body body body'
+		'. . bottom . .';
+}
+.gr-item-head {
+	grid-area: head;
+}
+.gr-item-title {
+	grid-area: title;
+}
+.gr-item-body {
+	grid-area: body;
+}
+.gr-item-bottom {
+	grid-area: bottom;
+}
+.x9 {
+	grid-template: auto auto auto / auto auto auto;
+}
+.gr-item-1row {
+	grid-column: 1 / 3;
+	grid-row: 1 / span 1;
+}
+.gr-item-2row {
+	grid-column: 2 / span 2;
+	grid-row: 2 / span 1;
+}
+.gr-item-3row {
+	grid-column: 1 / -1;
+	grid-row: 3 / span 1;
+}
+.repeat-col {
+	grid-template-columns: repeat(2, 70px 1fr);
+}
+.place-itms {
+	grid-template: 6rem 6rem 6rem / auto auto auto;
+	place-items: end;
+}
+.minmax {
+	width: 100%;
+	grid-template-columns: 70px minmax(30px, 200px) 70px;
+}
+
+
+/* 22.07 */
+.d2207 {
+	position: relative;
+}
+.d2207 > .pos-rel {
+	position: relative;
+	width: minmax(300px, 100%);
+	height: 500px;
+	background-color: var(--color-coral);
+}
+.d2207 .pos-stick {
+	position: sticky;
+	background-color: var(--color-blue);
+	top: 10px;
+	width: 100%;
+	height: 30px;	
+	text-align: center;
+}
+#piano {
+  background-color: var(--color-blue);
+  width: 992px;
+  height: 290px;
+  margin: 4rem auto;
+  padding: 90px 20px 0 20px;
+  position: relative;
+  border-radius: 10px;
+}
+.keys {
+  background-color: #040404;
+  width: 949px;
+  height: 180px;
+  padding-left: 2px;
+  overflow: hidden;
+}
+.key {
+  background-color: #ffffff;
+  position: relative;
+  width: 41px;
+  height: 175px;
+  margin: 2px;
+  float: left;
+  border-radius: 0 0 3px 3px;
+}
+.key.black--key::after {
+  background-color: #1d1e22;
+  content: "";
+  position: absolute;
+  left: -18px;
+  width: 32px;
+  height: 100px;
+  border-radius: 0 0 3px 3px;
+}
+@media (max-width: 768px) {
+  #piano {
+    width: 358px;
+  }
+  .keys {
+    width: 318px;
+  }
+}
+@media (max-width: 1199px) and (min-width: 769px) {
+  #piano {
+    width: 675px;
+  }
+  .keys {
+    width: 633px;
+  }
+}
+
+
+/* 23.07 */
+
+.d2307 a:link{
+	color: var(--color-main-text);
+	text-decoration: none;
+	font-size: 1.5rem;
+}
+.d2307 figcaption {
+	text-align: center;	
+}
+.d2307 a:visited {
+	color: var(--color-main-text);
+}
+.d2307 a>figure:hover {
+	background-color: var(--color-red);
+	text-decoration: none;
+	cursor: pointer;
+}
+
+
+/* 24.07 */
+.d2407 code {
+	display: block;
+	padding-left: 2rem;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	margin: 10px 0;
+}
+.great-grid {
+	display: grid;
+	width: 100%;
+	gap: 3px;
+	padding: 3px;
+/*	grid-template: auto / repeat(3, minmax(130px, calc((100% - 2 * 3px) / 3))); */
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-auto-flow: row;
+/*  background-color: var(--color-blue); */
+	position: relative;
+	z-index: 1;
+}
+@media (max-width: 590px)
+{
+	.great-grid {
+		grid-template-columns: 1fr 1fr;
+	}
+}
+
+.rainbow-border {
+	background-color: var(--color-coral);
+	width: 130px;
+	height: 130px;
+	display: block;
+	margin: 0 auto;
+	position: relative; 
+}
+@property --angle { 
+	syntax: "<angle>";
+	initial-value: 0deg;
+	inherits: false;
+}
+@keyframes spin {
+	from {
+		--angle: 0deg;
+	}
+	to {
+		--angle: 360deg;
+	}
+}
+.rainbow-border::after, .rainbow-border::before {
+	content: '';
+	position: absolute;
+	background: conic-gradient(from var(--angle), red, orange, orange, yellow, yellow, green, green, skyblue, skyblue, blue, blue, violet, violet, red);
+	z-index: -1;
+	inset: -3px;
+	border-radius: 10px;
+	opacity: 0;
+}
+.rainbow-border:hover {
+	border-radius: 10px;
+}
+.rainbow-border:hover::after {
+	animation: 2s spin linear infinite;
+	opacity: 1;
+}
+.rainbow-border:hover::before {
+	animation: 2s spin linear infinite;
+	opacity: 1;
+}
+.rainbow-border::before {
+	filter: blur(24px);
+	opacity: 0;
+}
+
+@property --rainbow-box-angle {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+.rainbow-box {
+	width: 130px;
+	height: 130px;
+	background: conic-gradient(from var(--rainbow-box-angle), red, orange, orange, yellow, yellow, green, green, skyblue, skyblue, blue, blue, violet, violet, red);
+	transition: --rainbow-box-angle 0.5s;
+	cursor: not-allowed;
+	margin: 0 auto;
+}
+.rainbow-box:hover {
+	--rainbow-box-angle: 90deg;
+}
+
+.scalex-box {
+	width: 130px;
+	height: 130px;
+	background: linear-gradient(to right, red, orange, orange, yellow, yellow, green, green, skyblue, skyblue, blue, blue, violet, violet, red);
+	margin: 0 auto;
+}
+.scalex-box:hover {
+	transform: scaleX(-1);
+}
+
+.animation-box {
+	width: 130px;
+	height: 130px;
+	margin: 0 auto;
+	background: linear-gradient(to right, red, orange, orange, yellow, yellow, green, green, skyblue, skyblue, blue, blue, violet, violet, red);
+	filter: grayscale(100%);
+}
+.animation-box:hover { 
+	animation: 3s linear infinite grayscaling alternate;
+}
+@keyframes grayscaling {
+  10% {
+    filter: grayscale(90%);
+  }
+  20% {
+    filter: grayscale(80%);
+  }
+  30% {
+    filter: grayscale(70%);
+  }
+  40% {
+    filter: grayscale(60%);
+  }
+  100% {
+	  filter: grayscale(0%);
+  }
+}
+
+/* 25.07 */
+.d2507 {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	place-content: flex-start center;
+}
+.d2507 p{
+	margin: 0 auto;
+}
+.d2507 video {
+	width: 560px;
+	height: 315px;
+	margin: 0 auto;
+}
+.d2507 audio {
+	width: 100%;	
+}
+.d2507 iframe {
+	width: 560px; 
+	height: 315px;
+	margin: 0 auto;
+}
+@media (max-width: 640px)
+{
+	.d2507 video {
+		width: 320px;
+		height: 185px;
+	}
+	.d2507 iframe {
+		width: 320px; 
+		height: 185px;
+	}		
+}
+
+
+/* 26.07 */
+
+.d2607 a:link{
+	color: var(--color-main-text);
+	text-decoration: none;
+	font-size: 1.5rem;
+}
+.d2607 figcaption {
+	text-align: center;	
+}
+.d2607 a:visited {
+	color: var(--color-main-text);
+}
+.d2607 a>figure:hover {
+	background-color: var(--color-red);
+	text-decoration: none;
+	cursor: pointer;
+}
+
+/* 02.08 */
+.d0208 a:any-link{
+	border-bottom: 1px solid var(--color-red);
+	font-weight: bold;
+}
+
+/* Bottom section */
+.bottom {
+	grid-column: 1 / -1;
+}
+
+#top-link {
+	position: fixed;
+	top: calc(100vh - 3rem);
+	right: 1rem;
+	color: var(--color-main-text);
+	text-decoration: none;
+	font-size: 1.5rem;
+}
+#top-link:visited {
+	color: var(--color-main-text);
+}
+#top-link:hover {
+	background-color: var(--color-red);
+	text-decoration: none;
+	cursor: pointer;
+}

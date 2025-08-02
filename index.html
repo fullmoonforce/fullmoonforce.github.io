@@ -1,0 +1,924 @@
+<!-- HTML Boilerplate consists of:
+<!DOCTYPE html> 
+	html document type
+<html lang="en">
+	language direction
+<meta charset="UTF-8"> 
+	charset direction
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+	taking all the display, very important for mobile
+<meta description>
+	for search engines and so
+<link rel="stylesheet" href="styles.css" type="text/css">
+	linking CSS
+<link href="https://fonts.googleapis.com/css?family=Anton%7CBaskervville%7CRaleway&display=swap" rel="stylesheet">
+	linking Google fonts
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+	links to social media icons
+<section>
+	used to divide document in different sections
+<header, main, footer>
+	it's always a good practice to semantically divide document with this parts
+<h1, h2, h3, h4, h5, h6>
+	the same with header levels, h1 should be only one
+<img loading="lazy">
+	makes download img last
+<a rel="noreferrer" target="_blank">
+	doesn't share with target where from link was accessed, _blank opens in new window
+<time>
+	translate dates into machine-readable format, allowing for better search engine results or custom features such as reminders
+<id="author-name">
+	there should be only one instance of id
+<class="text text-with-images">
+	element have two classes
+colspan, rowspan 
+	in table spans data cell to several columns/rows
+-->
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Fullmoonforce Web Development Blog">
+	<link rel="stylesheet" href="./styles.css" type="text/css">
+	<link
+		href="https://fonts.googleapis.com/css?family=Anton%7CPT+Serif%7CRaleway%7COswald&display=swap"
+		rel="stylesheet"
+	/>
+	<link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+    />
+	<!-- для абзаца со шрифтами -->
+	<link 
+		href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" 
+		rel="stylesheet"
+	/>
+	
+	<title>Target practice</title>
+</head>
+<body id="top">
+
+	<section class="heading">
+		<header class="title">
+			<img 
+				src="hero.png"
+				alt="Young guy making his homework with jungle on the background"
+				loading="lazy"
+				class="hero-img"
+			/>
+			<h1 id="title-name">TARGET PRACTICE</h1>
+			<p id="title-subtitle">Notes form freeCodeCamp web development curriculum study.</p>
+		</header>
+		<div class="author">
+			<p id="author-name">
+				От <a href="mailto:fullmoonforce@gmail.com" target="_blank" rel="noreferrer">fullmoonforce</a>
+			</p>
+			<p class="est-date">
+				осн. <time datetime="2025-07-12">12 Июля 2025</time>
+			</p>
+		</div>
+		<div class="social-icons">
+			<a href="https://www.youtube.com/@ilyabychkov5684" target="_blank">
+				<i class="fab fa-youtube"></i>
+			</a>
+			<a href="https://www.facebook.com/profile.php?id=61553673654840" target="_blank">
+				<i class="fab fa-facebook-f"></i>
+			</a>
+			<a href="https://www.instagram.com/fullmoonforce/" target="_blank">
+				<i class="fab fa-instagram"></i>
+			</a>
+		</div>
+	</section>
+	
+	
+	
+	<section class="main-article">
+		<hr>
+		<div class="author">
+			<p class="publish-date">
+				<time datetime="2025-07-12">12 Июля 2025</time>
+			</p>
+		</div>
+		<article class="blogpost-text">
+			<p>Программирование - это перевод. С языка абстрактной мысли на язык алгоритмического компьютера. Если хорошо знать язык, то получится перевести так, что компьютер тебя поймёт. Так же, как и в речи, если ты сделаешь много ошибок, или будешь знать язык недостаточно, тебе не удастся выразить мысль, и компьютер тебя не поймёт. Со временем язык развивается, и компьютеры лучше понимают мысли людей. Если не общаться с компьютером постоянно, то без практики не возможно узнать изменения в языке. В школе, и, особенно, в университете мне очень нравилось программирование. Время и человеческий опыт как-то отдалили меня от компьютеров. И спустя годы, когда время от времени мне доводилось программировать, компьютер меня хоть и понимал, но уже явно хуже. Поэтому некоторое время назад я решил изучить современное программирование. Началось всё с того, что в местном чате в разделе "Отдам бесплатно" кто-то отдавал книгу "Язык программирования С++" Бьёрна Страуступа. Я всегда хотел эту книгу прочесть, автор - создатель языка С++, С++ это язык, на котором написан Блокнот, в котором я сейчас ввожу этот текст, браузер, который отображает эту страницу, на которой размещён введённый мой текст, и, более того, операционная система Windows, которая все эти программы запускает. Лениво отозвавшись на объявление, не надеясь на самом деле быть первым, кто будет претендовать на книгу, мне повезло всё-таки оказаться её обладателем. Прежде, чем начать читать, я осведомился об издании, насколько оно современно, и оказалось, что хоть книга 2015 года, содержащаяся в ней информация устарела настолько, что для использования современного стандарта языка читать её даже не бесполезно, а даже вредно, потому что некоторые устаревшие концепции языка не применяются ныне, и для прикладного программирования в современном стандарте эту информацию лучше в голове не держать. Я решил скачать более свежее издание книги, или другую книгу по современному стандарту языка. Скачал, начал искать ей место на диске, отсортировал накопленные годами файлы, просмотрел закладки браузера, заметки, плейлисты. И вот такое спонтанное возникшее продолжительное организованное общение со своим компьютером привело в итоге к тому, что почти месяц я изучаю современные языки программирования, и получаю от этого огромное удовольствие. Конечно, мне не приходится учиться с нуля, моё образование позволяет осваивать только различия между тем, как было раньше и тем, как стало хорошо сейчас. Что-то осталось прежним, что-то устарело и ему на смену пришло новое, а что-то концептуально изменилось до неузнаваемости. Раньше было труднее. По ходу обучения, я вёл заметки, и в один прекрасный момент (сегодня) решил собрать их в одном месте, организовать, так сказать, себе песочницу, чтобы налепив куличей, в последствии можно было вернуться сюда и найти практическую информацию. Одновременно с этим решится главная проблема программирования - релиз (выпуск). Это очень важно: наигравшись в песочнице что-то выпустить в свет. Пусть это будет сумбурный в своём нагромождении первый пост моего блога, который я буду вести в первую очередь для себя, чтобы выпускать. Ну а ты, читатель, можешь следить за изменениями.</p>
+			<p>Так как это моя песочница, и скорее всего она будет со временем претерпевать кардинальные изменения, то для начала я буду писать как в дневник - старые даты вверху, новые даты внизу, а не наоборот, как это обычно. Ниже список заметок, которые я собираюсь добавить в эту мою песочницу.</p>
+		</article>
+		
+		
+		
+		
+			<input type="checkbox" id="show-ul" class="show-ul-checkbox" hidden>
+			<label for="show-ul" class="show-ul-button">Показать/скрыть список</label>	
+		
+			<ul class="d1207">
+				<li class="done">breadcrumbs</li>
+				<li class="done">Google Font</li>
+				<li class="done">lang=en</li>
+				<li class="done">charset</li>
+				<li class="done">meta name="viewport" content="width=device-width, initial-scale=1.0"</li>
+				<li class="done">meta="description" отражается в поисковике</li>
+				<li class="done">header, main, footer</li>
+				<li class="done">using the same id to two objects is <em>not</em> recommended</li>
+				<li class="done">class="box red" mean an object has <em>two</em> classes</li>
+				<li class="done">CSS for a order is: link, visited, hover, focus, active</li>
+				<li class="done">box-sizing (can apply to "*")</li>
+				<li class="done">::marker</li>				
+				<li class="done">nav > ul</li>
+				<li class="done">padding-inline-start</li>
+				<li class="done">Responsive design: fluid grid; flexible images; media queries</li>
+				<li class="done">img(loading=lazy)</li>
+				<li class="done">i class="fab fa-youtube"</li>
+				<li class="done">rel=noreferrer</li>
+				<li class="done">&lthr&gt</li>
+				<li class="done">object-fit: cover - position the element within its container. "cover" set the image to fill, cropping as needed to avoid changing the aspect ratio</li>
+				<li class="done">inheritance: border, margin, padding, background-color</li>
+				<li class="done">::first-letter</li>			
+				<li class="done">float: left for ::first-letter</li>
+				<li class="done">dl dt dd</li>
+				<li class="done">table caption, headers &ltth&gt</li>
+				<li class="done">nth-clild(odd)/(even) for ex. table elements</li>
+				<li class="done">border-collapse</li>
+				<li class="done">repeating-linear-gradient</li>
+				<li class="done">colspan</li>
+				<li class="done">min-width & max-width instread of width ensures width is fixed, not allowing elements to shrink to the container</li>
+				<li class="done">border-collapse: collapse</li>
+				<li class="done">filter</li>
+				<li class="done">flex is one-dimensional: for components</li>
+				<li class="done">grid is two-dimensional: for overall page structure</li>
+				<li class="done">display: flex</li>
+				<li class="done">css grid</li>
+				<li class="done">pre</li>
+				<li class="done">&ltdialog&gt</li>
+				<li class="done">user-scalable=no</li>
+				<li class="done">outline for a:active</li>				
+				<li class="done">appearance: none</li>
+				<li class="done">width: unset</li>
+				<li class="done">margin collapsing</li>
+				<li class="done">padding: 1px -&gt overflow: hidden</li>
+				<li class="done">overflow: hidden hides any scroll bars that appear when something extends past the viewport</li>
+				<li class="done">width: max(250px, 25vw)</li>
+				<li class="done">margin-block</li>
+				<li class="done">scroll-behavior: smooth</li>
+				<li class="done">tabindex</li>
+				<li class="done">transform</li>
+				<li class="done">A common pattern is to define a base style for mobile devices and then use media queries to enhance the layout for larger screens</li>
+				<li class="done">Common breakpoints:
+					<ol>
+						<li>small devices (smartphones): up to 640px</li>
+						<li>medium devices (tablets): 641px to 1024px</li>
+						<li>small devices (desktops): more 1025px</li>
+					</ol>
+					or
+					<ol>
+						<li>extra small &lt576px</li>
+						<li>small 577-768px</li>
+						<li>medium 768-992px</li>
+						<li>large 993-1200px</li>
+						<li>extra large &gt1200px</li>
+						<li>*extra extra large &gt1400px</li>
+					</ol>					
+				</li>
+				<li class="done">(!) Google uses mobile-first indexing</li>
+				<li class="done">open graph protocol для facebook, linkedin & chat share</li>
+				<li class="done">Pixabay, Unsplash</li>
+				<li class="done">SVG for icons and logos</li>
+				<li class="done">WEBP or AVIF for images</li>
+				<li class="done">html validator validator.w3.org, jsonformater.org</li>
+				<li class="done">readme.md</li>				
+				<li class="done">Figma, Adobe XD, Canva, Sketch (macOS), Framer, inVision, Adobe Photoshop, Aodbe Illustrator, Miro</li>
+				<li class="done">Assisted technologies tests</li>
+				<li class="done">normalize.css & sanitize.css</li>
+				<li class="done">icons @ Google font</li>
+				<li class="done">WebAIM color contrast checker; TPGi contrast analyzer</li>
+				<li class="done">Holy Grail Layout</li>
+				<li class="done">CSS Combinators:
+					<ol>
+						<li>.class * - any classes inside .class</li>
+						<li>.class1 .class2 - descendant selector, all class2 inside class1</li>
+						<li>.class1.class2 - chained selector, has both of classes</li>
+						<li>.class1 > .class2 - every class2 element that are direct children of class1</li>
+						<li>.class1 + .class2 - every class2 element that is placed immediately after class1 elements</li>
+						<li>.class1 ~ .class2 - every class2 element that are preceded by a class1 element (not inside)</li>
+						<li>.class1, .class2 - every class2 elements and every class2 elements</li>
+					</ol>					
+				</li>
+				<li class="done">Attribute selectors:
+					<ol>
+						<li>a[href] - selects all elements with a href attribute</li>
+						<li>p[lang="en"] - selects all elements with lang="en"</li>
+						<li>p[lang|="en"] - selects all elements with a lang attribute value equal to "en" or starting with "en-"</li>
+						<li>span[title~="flower"] - selects all elements with a title attribute containing the word "flower"</li>
+						<li>span[class^="one"] - selects all elements with a class attribute value that begins with "one"</li>
+						<li>[href$=".pdf"] - selects all elements with a href attribute value ends with ".pdf"</li>				
+						<li>[href*="w3schools"] - selects all elements with a href attribute value containing the substring "w3schools"</li>				
+						<li>a[href][title] - selects all a elements that both have an href attribute and a title attribute</li>
+					</ol>
+				</li>								
+				<li class="done">Pseudo-classes
+					<ol>
+						<li>:is() - all the elements inside all the parentheses (ex. :is(section, article) :is(h1, h2, h3, h4, h5, h6))</li> 
+						<li>:where() - all the elements inside all the parentheses, always has 0 specificity. is() takes on the specificity of the most specific selector in its argument.</li> 
+						<li>:has() - matches any parent element that has a specific sibling or has a specific element inside it (ex. section:has(h1), h2:has(+ p) - h2 elements that are immediately followed by a p element)</li> 
+						<li>:not() - all elements that are not indicated elements</li> 
+						<li>:target - is used to style the current active target element</li>
+						<li>:first-of-type - selects the first element of its type among a group of sibling elements</li>
+						<li>:first-child - selects the element that is the first child of its parent (among a group of sibling elements)</li>
+						<li>:empty - every element that has no children (including text nodes) (ex. :empty { display: none; })</li>
+					</ol>
+				</li>				
+				<li class="done">::placeholder ::spelling-error ::selection</li>
+				<li class="done">Custom properties :root { --main-color: #3498d6; }</li>
+				<li class="done">color: var(--main-color);</li>
+				<li class="done">fallback plan for support</li>
+				<li class="done">@property</li>				
+				<li class="done">@media mediatype and (feature: value) {/* CSS rules go here */}</li>
+				<li class="done">feature: width, height, min-width, max-width, aspect-ratio, <em>orientation</em>, min-resolution, <em>hover</em>, prefers-color-scheme</li>
+				<li class="done">picture srcset</li>
+				<li class="done">flex-wrap @media</li>				
+				<li class="done">grid-auto-flow</li>				
+				<li class="done">grid-template -> grid-area</li>
+				<li class="done">grid-column/grid-row is a shorthand for grid-column-start and grid-column-end</li>
+				<li class="done">repeat()</li>
+				<li class="done">place_items is a shorthand for align-items and justify-items</li>		
+				<li class="done">minmax()</li>
+				<li class="done">calc()</li>
+				<li class="done">min-content</li>
+				<li class="done">min-width: fit-content</li>			
+				<li class="done">float: left in Piano</li>
+				<li class="done">absolute, fixed, sticky</li>
+				<li class="done">for position: absolute need its parent have position: relative</li>			
+				<li class="done">transform of .project-tile in portfolio. solved by relative and z-index for parent</li>			
+				<li class="done">opacity</li>
+				<li class="done">cursor: not-allowed</li>
+				<li class="done">transition: for animations</li>
+				<li class="done">scaleX(-1)</li>
+				<li class="done">&ltaudio&gt, &ltvideo&gt</li>
+				<li class="done">iframe youtube</li>
+				<li class="done">"^наверх^"</li>
+				<li class="done">display: none; visibility: hidden, &ltdiv hidden&gt</li>	
+				<li class="done">hide ul</li>
+				<li class="done">.blogpost-text / .text ?</li>
+				<li class="done">Portfolio with all projects</li>
+				<li class="done">Certificate</li>
+
+				<li>GitHub Pages</li>
+				<li>modal dialog mdn</li>
+				<li>main grid width</li>
+				<li>filter: <em>grayscale</em> (or <em>sepia</em>) can help de-emphasize parts of a page</li>
+				
+				<li>flex-flow is shorthand for flex-direction and flex-wrap</li>
+				<li>justify-content: space-evenly</li>
+				<li>align-items: stretch</li>
+				<li>заметки от 18 июля</li>
+				<li>@media hover</li>
+				<li>animation-fill-mode</li>
+				<li>:any-link combines :link and :visited </li>
+				<li>:local-link</li>
+				
+				
+			</ul>		
+		
+	</section>
+	
+	<section class="main-article">
+		<hr>
+		<div class="author">
+			<p class="publish-date"><time datetime="2025-07-13">13 Июля 2025</time></p>
+		</div>
+		<article class="blogpost-text">
+			<p>Кроме заметок об уже узнанном, которые я здесь отражаю, у меня ещё есть идеи для реализации. И всё это целенаправленно на разработку некоторых идей, витающих в голове некоторое время. Главная тема теперешнего развития - использование графики. Здесь я хочу запечатлеть в таблице различные виды цветных градиентов.</p>
+			
+		</article>
+		
+		<dl>
+			<dt>Градиенты (<abbr title="Description list">dl dt dd</abbr>)</dt>
+			<dd>linear-gradient</dd>
+			<dd>radial-gradient</dd>
+			<dd>repeating-linear-gradient</dd>
+		</dl>
+			
+		<figure class="table-container">
+			<table>
+				<caption><h3>Градиенты</h3></caption>
+				<thead>
+					<tr>
+						<th>Описание</th>
+						<th>Вид</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><code>linear-gradient(to right, red, yellow)</code></td>
+						<td class="lin-grad1"></code></td>
+					</tr>
+					<tr>
+						<td><code>radial-gradient(circle closest-side at center, red, yellow 50%, green)</code></td>
+						<td class="rad-grad1"></code></td>
+					</tr>
+					<tr>
+						<td><code>radial-gradient(ellipse farthest-corner at top left, red, yellow 50%, green 50%, brown, green)</code></td>
+						<td class="rad-grad2"></code></td>
+					</tr>
+					<tr>
+						<td><code>radial-gradient(ellipse farthest-side at left, green, orange, skyblue)</code></td>
+						<td class="rad-grad3"></code></td>
+					</tr>
+					<tr>
+						<td><code>radial-gradient(circle farthest-corner at right bottom, red, yellow 50%, black)</code></td>
+						<td class="rad-grad4"></code></td>
+					</tr>
+					<tr>
+						<td><code>radial-gradient(circle farthest-corner at 70% 80%, white, red, brown, yellow)</code></td>
+						<td class="rad-grad5"></code></td>
+					</tr>					
+					<tr>
+						<td><code>background: radial-gradient(circle farthest-side at 100px 200px, red, orange, yellow, green, blue, skyblue, purple)</code></td>
+						<td class="rad-grad6"></code></td>
+					</tr>					
+					<tr>
+						<td><code>radial-gradient(circle closest-corner at 90% 20px, black, gold, white)</code></td>
+						<td class="rad-grad7"></code></td>
+					</tr>					
+					<tr>
+						<td><code>repeating-linear-gradient(to right, red, orange 6%, green 6%, blue 9%)</code></td>
+						<td class="rep-lin-grad1"></code></td>
+					</tr>
+					<tr>
+						<td><code>linear-gradient(var(--gradient-angle), red, blue)</code></td>
+						<td class="mov-grad1"></code></td>
+					</tr>
+				</tbody>
+				 <tfoot>
+					<tr>
+						<th colspan="2">Последний градиент меняется при наведении курсора.</th>
+					</tr>
+				</tfoot>
+			</table>
+		</figure>		
+	</section>
+	
+	<section class="main-article">
+		<hr>
+		<div class="author">
+			<p class="publish-date"><time datetime="2025-07-14">14 Июля 2025</time></p>
+		</div>
+		<article class="blogpost-text">
+			<p>Оформление кандзи, цитат и фоновых изображений.</p>			
+		</article>
+		<ruby> 空手 <rp>(</rp><rt>Karate</rt><rp>)</rp></ruby>
+		<div id="kazumi"></div>
+			<blockquote cite="https://www.kazumi-dojo.jp/">
+				"I started to think about the significance of Karate. I wanted to know what is Karate really. I began to question what I was doing; the way I was approaching this martial art. I now think that Karate is all about kata."
+			</blockquote>
+			<p>
+				<cite>-Hajime Kazumi</cite>
+			</p>
+		<div id="narushima"></div>
+		<blockquote cite="https://www.karatedo-narushimadojo.com/">
+			"В каратэ нет смысла, если нет нокаута. А принцип достижения этого примерно следующий: - сначала ты можешь нокаутировать соперника с 10 ударов, потом с 9, потом с 8 и так далее. Твой конечный результат – это «ичигеки» с одного удара."
+		</blockquote>
+		<p>
+			-Рю Нарушима, <cite>Karate-Do Narushima Dojo.</cite>
+		</p>
+	</section>
+
+	<section class="main-article">
+		<hr>
+		<div class="author">
+			<p class="publish-date"><time datetime="2025-07-15">15 Июля 2025</time></p>
+		</div>
+		<article class="blogpost-text">
+			<p>Responsive design: fluid grid; flexible images; media queries</p>
+		</article>
+		<article class="blogpost-text">
+			<p>Для приведения стандартных настроек отображения страниц у различных браузеров к общему, более согласованному и соответствующему современному стандарту, сохраняя при этому полезные стандартные стили браузера, используется <em>normalize.css</em>. Основанный на нём, также обеспечивающий согласованное кроссбраузерное стандартное оформление, но включающий в себя "ожидания и предпочтения разработчиков" - несколько более субъективных стилей, которые многие разработчики обычно предпочитают (например, <code>box-sizing: border-box</code>) - <em>sanitize.css</em> </p>		
+		</article>	
+		<article class="blogpost-text" id="article-fonts">
+			<p>Наиболее часто используемые шрифты: <span id="font-roboto">Roboto</span>, <span id="font-open-sans">Open Sans</span>, <span id="font-poppins">Poppins</span>, <span id="font-lato">Lato</span>, и <span id="font-barlow">Barlow</span>. Для создания визуальной согласованности следует использовать максимум два-три шрифта. Типы шрифтов: <code>serif, sans-serif, monospace, cursive, fantasy.</code> В конце списка семейств шрифтов всегда следует указывать общее семейство шрифтов: <span id="font-arial">Arial</span>, <span id="font-verdana">Verdana</span>, <span id="font-trebuchet-ms">Trebuchet MS</span> для шрифтов без засечек - их используют для экранов, <span id="font-times-new-roman">Times New Roman</span>, <span id="font-georgia">Georgia</span> для шрифтов с засечками - их традиционно используют для печати. Через <code>link</code> в шапке html-документа можно привязывать шрифты с ресурсов Google Fonts, Font Squirrel. Иконки социальных сетей и другие также можно подгружать с Google Fonts и FontAwesome</p>
+		</article>
+		<article class="blogpost-text" id="color-theory">
+			<p>В теории цвета для представления цветов видимого спектра в условной форме, обозначающей наиболее используемую в компьютерах модель <abbr title="Red, Green, Blue">RGB</abbr>, используется цветовой круг.</p>
+			<figure>	
+				<img src="color_wheel.png" alt="Цветовой круг RGB">
+				<figcaption>Цветовой круг RGB</figcaption>
+			</figure>
+			<p>Аналогичные цветовые схемы создают целостное и успокаивающее ощущение. Они состоят из аналогичных цветов, расположенных рядом друг с другом на цветовом круге.</p>
+			<div class="color-box" id="color_analog1"></div>
+			<div class="color-box" id="color_analog2"></div>
+			<div class="color-box" id="color_analog3"></div>
+			<p>Дополнительные цветовые схемы создают высокую контрастность и визуальное воздействие. Их цвета расположены на противоположных концах цветового круга относительно друг друга.</p>
+			<div class="color-box" id="color_comp1"></div>
+			<div class="color-box" id="color_comp2"></div>
+			<p>В цветовом круге RGB дополнительные цвета расположены на противоположных концах круга. Например, пурпурный является дополнительным к зелёному, синий — к жёлтому и так далее.</p>
+			<figure>	
+				<img src="complimentary_colors.png" alt="Дополнительные цвета">
+				<figcaption>Дополнительные цвета</figcaption>
+			</figure>
+			<p>Триадическая цветовая схема отличается яркими цветами.</p> 
+			<div class="color-box" id="color_tri1"></div>
+			<div class="color-box" id="color_tri2"></div>
+			<div class="color-box" id="color_tri3"></div>
+			<p>Она состоит из цветов, расположенных примерно на одинаковом расстоянии друг от друга. При соединении они образуют равносторонний треугольник на цветовом круге.</p>
+			<figure>	
+				<img src="triadic_colors.png" alt="Триадические цвета">
+				<figcaption>Триадические цвета</figcaption>
+			</figure>
+			<p>Монохромная цветовая схема создаёт ощущение единства и гармонии, сохраняя при этом контраст.</p>
+			<div class="color-box" id="color_mono1"></div>
+			<div class="color-box" id="color_mono2"></div>
+			<div class="color-box" id="color_mono3"></div>
+			<p>В ней все цвета получаются из одного базового цвета путём регулировки его яркости, тёмности и насыщенности.</p>
+			<figure>	
+				<img src="monochromatic_colors.png" alt="Монохромные цвета">
+				<figcaption>Монохромные цвета</figcaption>
+			</figure>
+			<p>И наконец, вот несколько советов по эффективному использованию цвета в веб-разработке:
+Создайте цветовую схему, которая определяет фирменный стиль вашего сайта.
+Используйте цвета, чтобы вызывать эмоции и восприятие, соответствующие вашим целям.
+Выбирайте достаточно контрастные цвета, чтобы сделать ваш сайт доступным для всех.
+Используйте цвет для выделения важных элементов вашего сайта, например, кнопок.
+Последовательно используйте цвет и создавайте с его помощью визуальную иерархию.</p>
+			<figure>	
+				<img src="oklch_colorwheel.png" alt="Oklab color space">
+				<figcaption>Oklab color space</figcaption>
+			</figure>				
+		</article>
+	</section>
+	
+	<section class="main-article">
+		<hr>
+		<div class="author">
+			<p class="publish-date"><time datetime="2025-07-16">16 Июля 2025</time></p>
+		</div>
+		<article class="blogpost-text d1607">
+			<p>Использование псевдо-элементов для определения альтернативного цвета выделения текста курсором, оформления кнопок и стилей повторяющихся элементов:</p>
+			<p>в текущем примере оформлены p:first-of-class нижней разрывной линией голубого цвета,</p>
+			<p>p:nth-element(3) цветом текста голубого цвета,</p>
+			<p>p:last-of-class цветом теста кораллового цвета,</p>
+			<p>а также якорь &lta&gt оформлен как кнопка: </p>
+			<div id="buttons-grid">
+				<button>Кнопка &ltButton&gt</button>
+				<a class="button">Якорь &lta&gt</a>
+				<input type="submit" value="<input> Submit" />
+				<input type="reset" value="<input> Reset" />
+			</div>
+			<p>используя :is(button, a.button, input[type='submit'], input[type='reset']): </p>
+			<p>для кнопок также используется transition: background-color 0.5s</p>
+		</article>		
+	</section>
+	
+	<section class="main-article">
+		<hr>
+		<div class="author">
+			<p class="publish-date"><time datetime="2025-07-17">17 Июля 2025</time></p>
+		</div>
+		<article class="blogpost-text d1707">
+			<p>Новый пост. Посвящён оставшимся заметкам по html. </p>
+			<dialog open style="margin: 0 auto; padding: 0 0 3rem 0;">Это диалог &ltdialog&gt.</dialog>
+			<br><br><br>
+			<p>				
+				<pre>
+ Preformated text. 
+ Текст внутри &ltpre&gt и &lt/pre&gt 
+ будет моноширным, с сохранением 
+ всех пробелов  ,   табов, таким же, 
+ какой он
+ в теле исходного кода.
+				</pre>
+			</p>
+			<p>В meta viewport можно указать user-scalable=0 или no, и тогда пользователь не сможет масштабировать страницу.</p>
+			<p><a>Ссылка с оформленным outline - линия за пределами border.</a></p>
+			<p>Свойство CSS <em>appearance</em> используется для отображения элементов пользовательского интерфейса со стилем, зависящим от платформы, на основе темы операционной системы.</p>
+			<p><code>width: unset</code>. Ключевое слово CSS <em>unset</em> сбрасывает свойство к его унаследованному значению, если свойство естественным образом наследуется от своего родителя, и к его исходному значению в противном случае. Другими словами, оно действует как ключевое слово <code>inherit</code> в первом случае, когда свойство является унаследованным, и как ключевое слово <code>initial</code> во втором случае, когда свойство не является унаследованным.</p>
+			<p><em>Margin Collapse.</em> Верхний и нижний margin элементов иногда схлопываются в один, равный наибольшему из двух полей. Этого не происходит с левым и правым margin. Только с верхним и нижним.</p>
+			<p>Используя <code>padding: 1px</code> вместе с <code>overflow: hidden</code>, создаётся «буферная зона» шириной в 1 пиксель вокруг содержимого внутри элемента, и все, что попытается отобразиться за пределами общих размеров элемента (включая padding), будет обрезано. Отдельно <code>overflow: hidden</code> скрывает все полосы прокрутки, которые появляются, когда что-то выходит за пределы области просмотра</p>
+			<p><code>max(attr1, attr2)</code> выбирает большее. Например, <code>width: max(250px, 25vw)</code>.</p>
+			<p><code>margin-block</code> задаёт вертикальный margin, top и bottom, в направлении block. <code>margin-inline</code> задаёт горизонтальный margin, left и right, в направлении inline.</p>
+			<p><code>scroll-behavior: smooth</code> определяет плавную прокрутку, а не резкую, когда пользователь нажимает на ссылку в прокручиваемом поле.</p>
+			<p><code>tabindex</code> определяет порядок табуляции элемента (при использовании кнопки «Tab» для навигации). Атрибут <code>tabindex</code> можно использовать для любого HTML-элемента (он будет действителен для любого HTML-элемента. Однако, это не всегда полезено).</p>
+			<p id="transformation"><code>transform</code> может использоваться для различных изменений геометрии элемента: <br><span>вращать</span>, <br><span>масштабировать</span>, <br><span>растягивать</span> или <br><span>перемещать</span>.</p>
+		</article>		
+	</section>
+	
+	<section class="main-article">
+		<hr>
+		<div class="author">
+			<p class="publish-date"><time datetime="2025-07-18">18 Июля 2025</time></p>
+		</div>
+		<article class="blogpost-text d1807">
+			<p>A common pattern is to define a base style for mobile devices and then use media queries to enhance the layout for larger screens</p>
+			<p>(!) Google uses mobile-first indexing</p>
+			<p>Common breakpoints:
+				<ol>
+					<li>small devices (smartphones): up to 640px</li>
+					<li>medium devices (tablets): 641px to 1024px</li>
+					<li>small devices (desktops): more 1025px</li>
+				</ol>
+				<p>or</p>
+				<ol>
+					<li>extra small &lt576px</li>
+					<li>small 577-768px</li>
+					<li>medium 768-992px</li>
+					<li>large 993-1200px</li>
+					<li>extra large &gt1200px</li>
+					<li>*extra extra large &gt1400px</li>
+				</ol>					
+			</p>
+			
+			<p>open graph protocol для facebook, linkedin & chat share</p>
+			<p>Pixabay, Unsplash</p>
+			<p>SVG for icons and logos</p>
+			<p>WEBP or AVIF for images</p>
+			<p>html validator validator.w3.org, jsonformater.org</p>
+			<p>readme.md</p>				
+			<p>Figma, Adobe XD, Canva, Sketch (macOS), Framer, inVision, Adobe Photoshop, Aodbe Illustrator, Miro</p>
+			<p>Assisted technologies tests</p>
+			<p>normalize.css & sanitize.css</p>
+			<p>icons @ Google font</p>
+			<p>WebAIM color contrast checker; TPGi contrast analyzer</p>
+			<p>Holy Grail Layout</p>
+		</article>		
+	</section>	
+	
+	<section class="main-article">
+		<hr>
+		<div class="author">
+			<p class="publish-date"><time datetime="2025-07-19">19 Июля 2025</time></p>
+		</div>
+		<article class="blogpost-text d1907">
+			<p>Были среди последних в разделе CSS задания по анимации. Это наиболее интересующая сейчас меня тема. Это - движение Луны по орбите Земли. <em>FULLMOONFORCE!</em></p>
+			<article id="moon-orbit">
+				<div class="space">
+					<div class="earth"></div>
+					<div class="orbit">
+						<div class="moon"></div>
+					</div>
+				</div>
+			</article>
+		</article>		
+	</section>	
+	
+	<section class="main-article">
+		<hr>
+		<div class="author">
+			<p class="publish-date"><time datetime="2025-07-20">20 Июля 2025</time></p>
+		</div>
+		<article class="blogpost-text d2007">
+			<p>CSS Combinators:</p>
+			<ul>
+				<li>.class * - any classes inside .class</li>
+				<li>.class1 .class2 - descendant selector, all class2 inside class1</li>
+				<li>.class1.class2 - chained selector, has both of classes</li>
+				<li>.class1 > .class2 - every class2 element that are direct children of class1</li>
+				<li>.class1 + .class2 - every class2 element that is placed immediately after class1 elements</li>
+				<li>.class1 ~ .class2 - every class2 element that are preceded by a class1 element (not inside)</li>
+				<li>.class1, .class2 - every class2 elements and every class2 elements</li>
+			</ul>	
+		</article>
+		<article class="blogpost-text d2007">
+			<p>Attribute selectors:</p>
+			<ul>
+				<li>a[href] - selects all elements with a href attribute</li>
+				<li>p[lang="en"] - selects all elements with lang="en"</li>
+				<li>p[lang|="en"] - selects all elements with a lang attribute value equal to "en" or starting with "en-"</li>
+				<li>span[title~="flower"] - selects all elements with a title attribute containing the word "flower"</li>
+				<li>span[class^="one"] - selects all elements with a class attribute value that begins with "one"</li>
+				<li>[href$=".pdf"] - selects all elements with a href attribute value ends with ".pdf"</li>				
+				<li>[href*="w3schools"] - selects all elements with a href attribute value containing the substring "w3schools"</li>				
+				<li>a[href][title] - selects all a elements that both have an href attribute and a title attribute</li>
+			</ul>
+		</article>
+		<article class="blogpost-text d2007">
+			<p>Pseudo-classes</p>
+			<ul>
+				<li>:is() - all the elements inside all the parentheses (ex. :is(section, article) :is(h1, h2, h3, h4, h5, h6))</li> 
+				<li>:where() - all the elements inside all the parentheses, always has 0 specificity. is() takes on the specificity of the most specific selector in its argument.</li> 
+				<li>:has() - matches any parent element that has a specific sibling or has a specific element inside it (ex. section:has(h1), h2:has(+ p) - h2 elements that are immediately followed by a p element)</li> 
+				<li>:not() - all elements that are not indicated elements</li> 
+				<li>:target - is used to style the current active target element</li>
+				<li>:first-of-type - selects the first element of its type among a group of sibling elements</li>
+				<li>:first-child - selects the element that is the first child of its parent (among a group of sibling elements)</li>
+				<li>:empty - every element that has no children (including text nodes) (ex. :empty { display: none; })</li>
+				<li>:hover - a:hover the element itself is hovered. a :hover a descendant of a element is hovered
+			</ul>
+		</article>		
+		<article class="blogpost-text d2007">
+			<p>Pseudo-elements</p>
+			<ul>
+				<li>::placeholder</li> 
+				<li>::spelling-error</li> 
+				<li>::selection</li> 
+				<li>::before</li> 
+				<li>::after</li>
+				<li>::first-letter</li>
+				<li>::marker</li>
+				<li>::first-line</li>
+			</ul>
+		</article>				
+		<article class="blogpost-text d2007">
+			<p>Variables</p>
+			<p>Custom properties ex. <br>
+				<code>:root { --main-color: #3498d6; }</code><br>
+				<code>body { background-color: var(--main-color), skyblye; }</code><br>
+				Always a good idea to provide fallback plan for support.</p>
+				<p>@property ex.<br>
+				<code>@property --gradient-angle {<br>
+				syntax: '<angle>';<br>
+				inherits: false;<br>
+				initial-value: 0deg;<br>
+				}<br>
+				.mov-grad1 {<br>
+				background: linear-gradient(var(--gradient-angle), red, blue);<br>
+				transition: --gradient-angle 0.5s;<br>
+				}<br>
+				.mov-grad1:hover {<br>
+				--gradient-angle: 90deg;<br>}</code></p>				
+		</article>
+		<article class="blogpost-text d2007">
+			<p>@media</p>
+			<p><code>@media mediatype and (feature: value) {/* CSS rules go here */}</code><br>
+			feature: width, height, min-width, max-width, aspect-ratio, <em>orientation</em>, min-resolution, <em>hover</em>, prefers-color-scheme<br></p>
+			<p>picture srcset используется для различных источников изображения для различных типов @media</p>				
+			<p><code>flex-wrap: wrap</code> для переноса flex на меньших экранах</p>	
+		</article>					
+	</section>
+
+	<section class="main-article">
+		<hr>
+		<div class="author">
+			<p class="publish-date"><time datetime="2025-07-21">21 Июля 2025</time></p>
+		</div>
+		<article class="blogpost-text d2107">
+			<p>Gread GRiD</p>
+			<h2>1. grid-auto-flow: column</h2>
+			<div class="grid-container auto-column">
+				<div>1</div>
+				<div>2</div>
+				<div>3</div>
+				<div>4</div>
+			</div>
+			<h2>2. grid-auto-flow: row</h2>
+			<div class="grid-container auto-row">
+				<div>1</div>
+				<div>2</div>
+				<div>3</div>
+				<div>4</div>
+			</div>
+			<h2>3. grid-template </h2>
+			<h6>50px auto / auto 50px auto;</h6>
+			<div class="grid-container template">
+				<div>1</div>
+				<div>2</div>
+				<div>3</div>
+				<div>4</div>				
+			</div>			
+			<h2>4. grid-template-areas </h2>
+			<h6>'head head . . .'<br>'. title title title .'<br>'body body body body body'<br>'body body body body body'<br>'. . bottom . .';</h6>
+			<div class="grid-container area">
+				<div class="gr-item-head">HEAD</div>
+				<div class="gr-item-title">TITLE</div>
+				<div class="gr-item-body">BODY</div>
+				<div class="gr-item-bottom">BOTTOM</div>	
+			</div>
+			<h2>5. grid-column/grid-row</h2>
+			<div class="grid-container x9">
+				<div class="gr-item-1row">1/3 1/span1</div>
+				<div class="gr-item-2row">2/span2 2/span1</div>
+				<div class="gr-item-3row">1/-1 3/span1</div>
+			</div>
+			<h2>6. repeat()</h2>
+			<h6>grid-template-columns: repeat(2, 70px 1fr)</h6>
+			<div class="grid-container repeat-col">
+				<div>70px</div>
+				<div>flexible</div>
+				<div>70px</div>
+				<div>flexible</div>
+			</div>
+			<h2>7. place-items: end</h2>		
+			<h6>grid-template: 6rem 6rem 6rem / auto auto auto;</h6>
+			<div class="grid-container place-itms">
+				<div>1</div>
+				<div>2</div>
+				<div>3</div>
+				<div>4</div>				
+				<div>5</div>
+				<div>6</div>
+				<div>7</div>
+				<div>8</div>
+				<div>9</div>
+			</div>
+			<h2>8. minmax()</h2>
+			<h6>minmax(30px, 200px)</h6>			
+			<div class="grid-container minmax">
+				<div>30px</div>
+				<div>minmax</div>
+				<div>30px</div>
+			</div>
+		</article>
+		<article class="blogpost-text d2107">
+			<p>Calc()</p>
+			<p><code>width: calc(100% - 100px);</code> A mathematical expression. The result will be used as the value.
+The following operators can be used: + - * /</p>
+		</article>
+		<article class="blogpost-text d2107">
+			<p>min-width</p>
+			<p><code>min-width: 3.5em;</code><br>absolute value.</p>
+			<p><code>min-width: 20%;</code><br>percentage of the containing block's width.</p>
+			<p><code>min-width: auto;</code><br>default value. The source of the automatic value for the specified element depends on its display value. For block boxes, inline boxes, inline blocks, and all table layout boxes auto resolves to 0. For flex items and grid items, the minimum width value is either the specified suggested size, such as the value of the width property, the transferred size, calculated if the element has an aspect-ratio set and the height is a definite size, otherwise, the min-content size is used. If the flex or grid item is a scroll container, or if a grid item spans more than one flexible column track, the automatic minimum size is 0.</p>
+			<p><code>min-width: max-content</code><br>intrinsic preferred min-width.</p>
+			<p><code>min-width: min-content</code><br>intrinsic minimum min-width.</p>
+			<p><code>min-width: fit-content</code><br>use the available space, but not more than max-content, i.e., min(max-content, max(min-content, stretch)).</p>
+			<p><code>min-width: fit-content(length-percentage)</code><br>uses the fit-content formula with the available space replaced by the specified argument, i.e., min(max-content, max(min-content, argument)).</p>
+			<p><code>min-width: stretch</code><br>limits the minimum width of the element's margin box to the width of its containing block. It attempts to make the margin box fill the available space in the containing block, so in a way behaving similar to 100% but applying the resulting size to the margin box rather than the box determined by box-sizing.</p>
+			<p><code>min-content</code><br>min-content sizing keyword represents the minimum intrinsic size of the content. For text content this means that the content will take all soft-wrapping opportunities, becoming as small as the longest word.</p>
+			<p><code>max-content</code><br>max-content sizing keyword represents the maximum intrinsic size of the content. For text content this means that the content will not wrap at all even if it causes overflows.
+		</article>		
+	</section>		
+	
+	<section class="main-article">
+		<hr>
+		<div class="author">
+			<p class="publish-date"><time datetime="2025-07-22">22 Июля 2025</time></p>
+		</div>
+		<article class="blogpost-text d2207">
+			<p>Position: static. Стандартное значение, не позиционируется каким-либо особым образом; он всегда позиционируется в соответствии с обычным потоком страницы.</p>
+		</article>
+		<article class="blogpost-text d2207">
+			<p>Position: relative. Позиционируется относительно своего нормального положения. Установка свойств «top», «right», «bottom» и «left» относительно позиционируемого элемента приведёт к его смещению относительно обычного положения. Остальной контент не будет смещен в промежуток, оставленный элементом.</p>
+		</article>
+		<article class="blogpost-text d2207">
+			<p>Position: fixed. Позиционируется относительно области просмотра, то есть всегда остаётся на одном и том же месте, даже при прокрутке страницы. Свойства top, right, bottom и left используются для позиционирования элемента. Не оставляет промежутка на странице, где он обычно находится. Как пример - ссылка "^наверх^", которая всегда остаётся на экране.</p>
+		</article>
+		<article class="blogpost-text d2207">
+			<p>Position: sticky. Позиционируется на основе позиции прокрутки пользователем. Sticky элемент переключается между relative и fixed положением в зависимости от положения прокрутки. Он позиционируется relative, пока не достигнет заданного смещения в области просмотра, после чего он «прилипает» на месте (как position:fixed). Как пример - голубая линия на оранжевом фоне.</p>
+			<div class="pos-rel">
+				<div class="pos-stick">STICKY</div>
+			</div>
+		</article>
+		<article class="blogpost-text d2207">
+			<p>Где, в числе прочего, можно использовать float: left;</p>
+			<div id="piano">
+				<div class="keys">
+				<div class="key"></div>
+				<div class="key black--key"></div>
+				<div class="key black--key"></div>
+				<div class="key"></div>
+				<div class="key black--key"></div>
+				<div class="key black--key"></div>
+				<div class="key black--key"></div>
+
+				<div class="key"></div>
+				<div class="key black--key"></div>
+				<div class="key black--key"></div>
+				<div class="key"></div>
+				<div class="key black--key"></div>
+				<div class="key black--key"></div>
+				<div class="key black--key"></div>
+
+				<div class="key"></div>
+				<div class="key black--key"></div>
+				<div class="key black--key"></div>
+				<div class="key"></div>
+				<div class="key black--key"></div>
+				<div class="key black--key"></div>
+				<div class="key black--key"></div>
+				</div>
+			</div>
+		</article>
+	</section>
+	
+	<section class="main-article">
+		<hr>
+		<div class="author">
+			<p class="publish-date"><time datetime="2025-07-23">23 Июля 2025</time></p>
+		</div>
+		<article class="blogpost-text d2307">
+			<p>Здесь собраны мои работы в рамках практики учебного курса freeCodeCamp:</p>
+			<a href="./f29_portfolio/index.html" target="_blank">
+			<figure>
+				<img src="portfolio.webp" alt="my portfolio">
+				<figcaption>portfolio</figcaption>
+			</figure>
+			</a>
+		</article>
+		<article class="blogpost-text d2307">
+			<p>Завершив курс Responsive Web Design, мне выдали сертификат:</p>
+			<figure>
+				<img src="first_certificate.png" alt="my first certificate">
+				<figcaption>Certificate</figcaption>
+			</figure>
+			</a>
+		</article>
+	</section>
+
+	<section class="main-article">
+		<hr>
+		<div class="author">
+			<p class="publish-date"><time datetime="2025-07-24">24 Июля 2025</time></p>
+		</div>
+		<article class="blogpost-text d2407">
+			<p>Если бы не один, казалось бы, маленький элемент этого поста - а именно вот этот маленький квадратик кораллового цвета - то не позналась бы глубоко скрывающаяся под поверхностью интересная особенность. Кусок кода, отвечающего за анимацию вращающейся радуги вокруг квадратного элемента, я уже использовал отдельно, и в составе навигации по портфолио. Здесь же она не работала, и мне пришлось долго разбираться, почему. Проблема была в том, что анимация была, но как будто где-то внутри квадрата. Оказалось, что какое-то правило сжимает геометрию псевдо-элементов ::before и ::after, которые, собственно, и содержат в себе вращающийся конусный градиент радужного цвета. Методом исключения проверив несколько параметров, установилось, что у этих псевдо-элементов границы высчитываются по правилу border-box, поэтому имея рамку (ради которой всё и затевается), их геометрия уменьшается на размер как раз этой рамки, и анимацию не видно. И вроде бы всё логично, правило border-box специально описано первым. Внезапно, оказывается, что в других проектах в том же самом месте загадочным образом именно эти два псевдо-элемента описываются противоположным правилом content-box! Это и оказалось разгадкой. Оказалось, что по умолчанию все элементы имеют правило box-sizing: content-box. Это означает, что при установке ширины или высоты элемента это измерение применяется только к области содержимого, а любые значения padding или border добавляются за пределами этого указанного измерения. Общее указание box-sizing: border-box; изменяют это правило для html или *, это правило не наследуется по умолчанию для всех других элементов или <em>псевдо-элементов</em>. Чтобы border-box применялся последовательно во всём документе, включая ::before и ::after, можно использовать:</p>
+			<code>html { box-sizing: border-box; }<br>*, *::before, *::after { box-sizing: iherit; }<br></code>
+			<p>(Как оказалось, что и было сделано для этого проекта.)</p>
+			<p>Хотя, разбираясь с этим, было найдено другое решение, которое позволяет использовать тот же box-sizing: border-box:<br>
+вместо:</p>
+			<code>
+	content: '';<br>
+	position: absolute;<br>
+	background: conic-gradient(from var(--angle), red, orange, orange, yellow, yellow, green, green, skyblue, skyblue, blue, blue, violet, violet, red);<br>
+	height: 100%;<br>
+	width: 100%;<br>
+	top: 50%;<br>
+	left: 50%;<br>
+	translate: -50% -50%;<br>
+	z-index: -1;<br>
+	padding: 3px;<br>
+	border-radius: 10px;<br>
+	opacity: 0; <br>
+			</code>
+			<p>используется:</p>
+			<code>
+	content: '';<br>
+	position: absolute;<br>
+	background: conic-gradient(from var(--angle), red, orange, orange, yellow, yellow, green, green, skyblue, skyblue, blue, blue, violet, violet, red);<br>
+	z-index: -1;<br>
+	inset: -3px;<br>
+	border-radius: 10px;<br>
+	opacity: 0;<br>
+			</code>
+			<p>Здесь inset определяет внешний отступ от родительского элемента (shorthand for top, left, bottom и right). Для решения проблемы с этой же анимацией в проекте "Portfolio", родительскому элементу были добавлены параметры position: relative и z-index: -1.</p>
+		</article>
+		<article class="blogpost-text d2407">
+			<p>Здесь приведены некоторые примеры анимации, работающие по наведению курсора или нажатия:</p>
+		</article>
+		<div class="great-grid">
+			<div class="rainbow-border">1</div>
+			<div class="rainbow-box">2</div>
+			<div class="scalex-box">3</div>
+			<div class="animation-box">4</div>
+		</div>
+	</section>
+	
+	<section class="main-article">
+		<hr>
+		<div class="author">
+			<p class="publish-date"><time datetime="2025-07-25">25 Июля 2025</time></p>
+		</div>
+		<article class="blogpost-text d2507">
+			<p>Video.</p>
+			<video  controls>
+				<source src="top.mp4" type="video/mp4">
+				Your Browser doesn't support the video element.				
+			</video>
+		</article>
+		<article class="blogpost-text d2507">
+		<p>Audio.</p>
+			<audio controls>
+				<source src="radiate.mp3" type="audio/mpeg">
+				Your browser doesn't support the audio element.
+			</audio>
+		</article>
+		<article class="blogpost-text d2507">
+			<p>iframe YouTube embed.</p>
+			<iframe src="https://www.youtube.com/embed/jNas99oEXBU?si=TLwEXnA9Hmh6sULn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+		</article>
+	</section>
+
+	<section class="main-article">
+		<hr>
+		<div class="author">
+			<p class="publish-date"><time datetime="2025-07-26">26 Июля 2025</time></p>
+		</div>
+		<article class="blogpost-text d2607">
+			<p>Воссоздал в качестве практического занятия наш старый сайт Удмуртской Федерации Киокусинкай Каратэ, который я делал к первенству республики в 2018 году. Сделал точную копию, но с использованием новых навыков языка.</p>			
+			<a href="./karateudm_remake/index.html" target="_blank">
+			<figure>
+				<img src="karateudm_remake.webp" alt="karateudm remake">
+				<figcaption>Сайт Удмуртской Федерации Киокусинкай Каратэ</figcaption>
+			</figure>
+			</a>
+		</article>
+	</section>
+
+	<section class="main-article">
+		<hr>
+		<div class="author">
+			<p class="publish-date"><time datetime="2025-08-02">02 Августа 2025</time></p>
+		</div>
+		<article class="blogpost-text d0208">
+			<p>Сразу два проекта подверглись публикации: <a href="https://fullmoonforce.github.io" target="_blank">этот блог</a> и программа <a href="https://kyokushinsamui.github.io" target="_blank">самостоятельных тренировок</a> для моих учеников.</p>
+		</article>
+	</section>	
+	
+	<section class="bottom">
+		<footer>
+			<p><br><br><br></p>
+		</footer>
+	</section>
+	
+	<a href="#top" id="top-link">^ наверх ^</a>
+	
+</body>
+</html>
