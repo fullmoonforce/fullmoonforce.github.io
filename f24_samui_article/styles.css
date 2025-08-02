@@ -1,0 +1,94 @@
+*, ::before, ::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  font-family: 'Baskervville', serif;
+  background-color: #faf6eb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+h1 {
+  font-family: 'Anton', sans-serif;
+  text-align: center;
+  font-size: 8rem;
+  color: orangered;
+}
+h2, h3, h4 {
+  font-family: 'Raleway', sans-serif;
+}
+h2 {
+  text-align: center;
+  font-size: 2.4rem;
+  color: orangered;
+}
+h3 {
+  text-align: center;
+  font-size: 2rem;
+  color: orangered;
+}
+p {
+  font-size: 1.8rem;
+  text-align: justify;
+  letter-spacing: 0.6px;
+  color: black;
+}
+p::first-letter {
+  font-size: 4rem;
+  color: orangered;
+  float: left;
+  margin-right: 1rem;
+}
+
+img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.magazine-cover {
+  display: grid;
+  grid-template-areas: "title title title"
+"feature-article feature-article cover-image"
+"small-article1 small-article2 cover-image";
+  grid-template-columns: 1fr 1fr 1fr; 
+  grid-template-rows: auto 1fr 1fr;
+  gap: 10px;
+  width: 80%;
+}
+.title {
+  grid-area: title;
+  padding: 10px;
+  background-color: #46cefe;
+}
+.feature-article
+{
+  grid-area: feature-article;
+  background-color: #8cdeda;
+}
+.small-article1 {
+  grid-area: small-article1;
+  background-color: #c2d4be;
+  padding: 10px;
+}
+.small-article2 {
+  grid-area: small-article2;
+  background-color: #c2d4be;
+  padding: 10px;
+}
+.cover-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-area: cover-image;
+  background-color: #d7beb7;
+  padding: 10px;
+}
+
+
+

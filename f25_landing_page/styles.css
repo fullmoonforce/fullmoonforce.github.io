@@ -1,0 +1,197 @@
+*, ::before, ::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	background-color: white;
+	font-family: 'Tahoma', sans-serif;
+	color: black;
+	line-height: 1.5rem;
+	background-color: white;
+}
+.page_wrapper {
+	display: grid;
+	grid-template-columns: minmax(2rem, 1fr) minmax(min-content, 67rem) minmax(2rem, 1fr);
+	row-gap: 3rem;
+	
+}
+
+h2 {
+	font-family: 'Times New Roman', serif;
+	text-align: center;
+	padding: 1rem 0 2rem;
+	border-bottom: 1px dotted red;
+}
+h2::before {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/6/6b/Kanku_Kyokushin.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-right: 8px;
+  vertical-align: baseline;
+}
+
+h3, h4, h5, h6 {
+	font-family: 'Tahoma', sans-serif;
+}
+#top p, ol, form, table, h3 {
+	padding-bottom: 1rem
+}
+#top em {
+	font-style: normal;
+	font-weight: bold;
+}
+
+#header {
+	grid-column: 1 / -1;
+	position: fixed;
+	width: 100%;
+
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	background-color: white;
+	border-bottom: 1px solid #d71418;
+}
+#logo-img {
+	line-height: 0;
+}
+
+#nav-bar>ul {
+	list-style: none;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	gap: 20px;
+	text-wrap: nowrap;
+	margin: 10px;	
+}
+#nav-bar a:link {
+	text-decoration: none;
+	color: black;
+}
+#nav-bar a:visited {
+	color: black;
+}
+#nav-bar a:hover {
+  color: #d71418;
+  transition: color 0.5s;
+}
+
+
+#top {
+	grid-column: 2 / 3;
+	scroll-margin-top: 71px;
+	margin-top: 71px;
+	background-color: white;
+}
+#spirits, #events, #organization {
+	scroll-margin-top: 71px;
+}
+@media (max-width: 750px) {
+	#header {
+		justify-content: center;
+	}
+	#logo-img {
+		width: 100%;
+	}
+	#header-img{
+		display: block;
+		margin: 0 auto;
+	}
+	#top {		
+		scroll-margin-top: 115px;
+		margin-top: 115px;
+	}
+	#spirits, #events, #organization {
+		scroll-margin-top: 115px;
+	}
+}@media (max-width: 640px) {
+	#nav-bar>ul {
+		flex-direction: column;	
+		align-items: center;
+	}
+	#top {		
+		scroll-margin-top: 203px;
+		margin-top: 203px;
+	}
+	#spirits, #events, #organization {
+		scroll-margin-top: 203px;
+	}
+}
+#dzadzen img {
+	width: 100%;
+	max-width: 700px;
+	display: block;
+	margin: 0 auto;
+}
+#video {
+	max-width: 100%;
+	display: block;
+	margin: 0 auto;
+}
+#events img{
+	max-width: 612px;
+	width: 90%;
+	display: block;
+	margin: 0 auto;
+}
+#organization ol {
+	list-style-position: inside;
+}
+#organization form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 10px;
+}
+#organization input[type="submit"] {
+	height: 2rem;
+	width: 8rem;
+	background-color: #d71418;
+	border: none;
+	color: white;	
+}
+table {
+	width: 100%;
+	max-width: 830px;
+}
+table th {
+	text-align: left;
+}
+#top-link {
+	display: block;
+	text-align: right;	
+}
+#top-link:link {
+	color: black;
+	text-decoration: none;
+}
+#top-link:visited {
+	color: black;
+	
+}
+#top-link:hover {
+	color: #d71418;
+	transition: color 0.5s;
+}
+footer {
+	grid-column: 1 / -1;
+
+	background-color: darkgrey;
+	padding: 10px;
+}
+footer>p {
+	display: flex;
+	justify-content: center;
+	font-size; 0.9rem;
+	color: white;
+	
+}

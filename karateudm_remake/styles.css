@@ -1,0 +1,233 @@
+*, ::before, ::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;	
+}
+html {
+	font-size: 62.5%;
+	scroll-behavior : smooth;
+}
+@media (max-width: 830px) {
+	html {
+		font-size: 55%;
+	}
+}
+body {
+	font-family: 'Roboto', 'Helvetica', sans-serif;
+}
+
+/* HEADER */
+header {
+	position: fixed;
+	top: 30px;
+	left: 0;
+	height: 80px;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	align-items: center;
+	background-color: rgba(162, 0, 97, 0.4);
+}
+@media (max-width: 830px) {
+	header {
+		flex-direction: column;
+		gap: 2rem;
+		height: 100px;
+	}
+}
+header #id-logo {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 1rem;	
+	color: white;
+}
+header h2 {
+	font-size: 3rem;
+}
+header h3 {
+	font-size: 1.2rem
+}
+#img-logo-iko {
+	height: 48px;
+	width: 68px;
+}
+#main-name {
+	display: flex;
+	flex-direction: column;
+}
+header nav ul {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	gap: 3rem;
+}
+header nav ul {
+	list-style: none;
+}
+header nav ul li a:link {
+	font-size: 2rem;
+	color: linen;
+	text-decoration: none;
+}
+header nav ul li a:visited {
+	color: linen;
+	border-bottom: 2px dotted linen;
+}
+header nav ul li a:hover {
+	color: linen;
+	border-bottom: 2px dotted linen;
+}
+header nav ul li a:active {
+	color: linen;
+	border-bottom: 2px solid linen;
+}
+
+.class-frame {
+	min-height: 100vh;
+}
+
+/* MAS OYAMA */
+#mas-oyama {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: start;
+	background-image: url('./img/oyama1.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center 0%;
+	background-attachment: fixed;
+	
+	color: white;
+	font-size: 2.5rem;
+}
+.class-quote {
+	margin-left: 4rem;
+	width: 35%;
+	text-align: right;
+	
+}
+.class-quote blockquote {
+	margin-bottom: 3rem;
+	font-family: serif;
+}
+
+/* NEWS */
+#news {
+	display: grid;
+	width: 100%;
+	grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+	justify-content: center;
+	align-items: flex-start;
+	gap: 5rem;
+}
+#news .new:first-of-type {
+	margin: 200px auto 0px;
+}
+.new  {
+	margin: 0 auto 200px;
+}
+@media (min-width: 830px) {
+	.new  {
+		margin: 200px auto 0;
+	}	
+}
+.new h3 {
+	font-size: 1.8rem;
+	margin-bottom: 1rem;
+}
+.new p {
+	font-size: 1.6rem;
+}
+.new h6 {
+	font-size: 1.4rem;
+	font-weight: normal;
+	font-style: italic;
+}
+
+#izhevsk {
+	background-image: url('./img/izhevsk.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center 0%;
+	background-attachment: fixed;
+}
+
+.wrap-team {
+	margin: 4rem;
+	display: grid;
+	grid-template-columns: 300px 160px max-content;
+	grid-template-areas: 
+		". gym-name gym-name"
+		". coach-photo gym-info";
+	
+}
+@media (max-width: 830px)
+{
+	.wrap-team {
+		display: grid;
+		grid-template-columns: 160px max-content;
+		grid-template-areas: 
+			"gym-name gym-name"
+			"coach-photo gym-info";
+		margin: 2rem;
+	}	
+}
+.team .wrap-team:first-of-type {
+	margin-top: 200px;
+}
+.team .wrap-team:last-of-type {
+	margin-bottom: 200px;
+}
+.wrap-team .gym-name {
+	grid-area: gym-name;
+	font-size: 2.5rem;	
+	font-weight: normal;
+	
+}
+@media (max-width: 830px) {
+	.wrap-team .gym-name {	
+		font-size: 1.5rem;	
+	}
+}
+.wrap-team .coach-photo {
+	grid-area: coach-photo;
+	margin: 0 0 0 auto;
+}
+.wrap-team .gym-info {
+	grid-area: gym-info;
+}
+
+#sarapul {
+	background-image: url('./img/sarapul.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center 0%;
+	background-attachment: fixed;	
+}
+
+#group-photo {
+	background-image: url('./img/slide7.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center 0%;
+	background-attachment: fixed;		
+}
+
+@media (max-width: 830px)
+{
+	#mas-oyama {
+		background-image: url('./img/oyama1_mob.jpg');
+	}
+	#izhevsk {
+		background-image: url('./img/izhevsk_mob.jpg');
+	}
+	#sarapul {
+		background-image: url('./img/sarapul_mob.jpg');
+	}
+	#group-photo {
+		background-image: url('./img/slide7_mob.jpg');
+	}
+}

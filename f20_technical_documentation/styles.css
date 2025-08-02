@@ -1,0 +1,96 @@
+html {
+	box-sizing: border-box;
+  font-family: Roboto, sans-serif;
+	scroll-behavior: smooth;
+}
+body {
+	background-color: white;
+	margin: 0;
+}
+
+#navbar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 270px;
+	min-width: 250px;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	border-right: 2px solid darkgrey;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+#navbar header {
+	border-bottom: 1px solid black;
+	padding-left: 5px;
+}
+#navbar h1 {
+	font-size: 2rem;
+}
+.nav-link {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	overflow-y: hidden;
+	overflow-x: hidden;
+	min-height: calc(2rem + 20px);
+	padding-left: 20px;
+	border-bottom: 1px solid black;
+	font-size: 1.5rem;
+	text-decoration: none;
+	color: black;
+}
+.nav-link:hover {
+	cursor: pointer;
+	color: skyblue;
+}
+.nav-link:active {
+	background-color: lightgrey;
+	color: white;
+}
+
+#main-doc {
+	position: absolute;
+	margin-left: 270px;
+	padding: 20px;
+}
+#main-doc h2 {
+	font-size: 2rem;
+	font-weight: normal;
+}
+#main-doc h3 {
+	font-weight: normal;
+	font-size: 1.5rem;
+}
+#main-doc p {
+	font-size: 1rem;
+}
+#main-doc li{
+	margin: 16px auto;
+}
+#main-doc img {
+	max-width: 100%;
+	height: auto;
+}
+#main-doc table, th, td {
+	border: 1px solid lightgrey;
+}
+#main-doc th {
+	background-color: lightgrey;
+}
+#main-doc table {
+	max-width: 750px;
+}
+
+@media (max-width: 768px) {
+	#navbar {
+		position: relative;
+		width: 100%;
+	}
+	#main-doc {
+	position: absolute;
+	margin-left: 10px;
+	padding: 20px;
+	}
+}

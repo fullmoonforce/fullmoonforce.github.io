@@ -1,0 +1,58 @@
+* {
+  box-sizing: border-box;
+}
+
+
+tr[class="read"] {
+  background-image: linear-gradient(lightgreen, darkgreen);
+}
+tr[class="to-read"] {
+  background-image: linear-gradient(lightcoral, maroon);
+}
+tr[class="in-progress"] {
+  background-image: linear-gradient(lightyellow, darkgoldenrod);
+}
+
+span {
+  display: inline-block;
+}
+
+tr[class="to-read"] span[class="status"] {
+  border: 1px solid pink;
+  border-radius: 10px;
+  background-image: linear-gradient(red, maroon);
+}
+tr[class="read"] span[class="status"] {
+  border: 1px solid limegreen;
+  border-radius: 10px;
+  background-image: linear-gradient(lightgreen, darkgreen);
+}
+tr[class="in-progress"] span[class="status"] {
+  border: 1px solid gold;
+  border-radius: 10px;
+  background-image: linear-gradient(lightyellow, darkgoldenrod);
+}
+
+span[class="status"], span[class^="rate"]{
+  height: 40px;
+  width: 150px;
+  padding: 10px;
+}
+span[class^="rate"] > span {
+  border: 1px solid blue;
+  border-radius: 50%;
+  margin: 2px;
+  height: 15px;
+  width: 15px;
+  background-color: blue;
+}
+
+span[class~="one"] :first-of-type {
+  background-image: linear-gradient(white, black);
+}
+span[class~="two"] :nth-child(1), span[class~="two"] :nth-child(2) {
+  background-image: linear-gradient(white, black);
+}
+span[class~="three"] > span {
+  background-image: linear-gradient(white, black);
+}
