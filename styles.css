@@ -941,6 +941,26 @@ ruby {
 	grid-column: 1 / -1;
 }
 
+/* 03.08 */
+/* 26.07 */
+
+.d0308 a:link{
+	color: var(--color-main-text);
+	text-decoration: none;
+	font-size: 1.5rem;
+}
+.d0308 figcaption {
+	text-align: center;	
+}
+.d0308 a:visited {
+	color: var(--color-main-text);
+}
+.d0308 a>figure:hover {
+	background-color: var(--color-red);
+	text-decoration: none;
+	cursor: pointer;
+}
+
 #top-link {
 	position: fixed;
 	top: calc(100vh - 3rem);
