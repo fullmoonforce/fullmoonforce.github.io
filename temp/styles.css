@@ -1,0 +1,40 @@
+:root {
+	--main-background-color: #242736;
+	--main-text-color: linen;
+}
+*, ::before, ::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+html {
+	font-size: 55%;
+}
+body {
+	font-family: 'PT Serif', serif;
+	background-color: red;
+	color: var(--main-text-color);
+	
+	display: grid;
+	grid-template-columns: minmax(2rem, 1fr) auto minmax(2rem, 1fr);
+	row-gap: 3rem;
+	
+}
+@media (min-width: 426px){
+	body {
+		grid-template-columns: minmax(2rem, 1fr) minmax(min-content, 42rem) minmax(2rem, 1fr);
+		background-color: var(--main-background-color);
+	}
+	html {
+		font-size: 62.5%;
+	}
+}
+@media (min-width: 1024px){
+	body {
+		grid-template-columns: minmax(2rem, 1fr) minmax(min-content, 94rem) minmax(2rem, 1fr);
+		background-color: var(--main-background-color);
+	}
+	html {
+		font-size: 62.5%;
+	}
+}
