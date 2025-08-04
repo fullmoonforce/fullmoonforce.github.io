@@ -152,12 +152,12 @@ h2 {
 	}
 	#promo {
 		grid-template-rows: 46px auto 46px;
-		grid-template-columns: 48px auto 48px;
+		grid-template-columns: 24px auto 24px;
 		
 	}
 	#sativa, #indica, #hybrid {
 		grid-template-rows: 46px auto 46px;
-		grid-template-columns: 48px auto 48px;
+		grid-template-columns: 24px auto 24px;
 		
 	}	
 	.menu-class {
