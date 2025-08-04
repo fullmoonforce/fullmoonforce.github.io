@@ -10,9 +10,11 @@
 html {
 	font-size: 55%;
 }
+
+/* if background is skyblue, than device width is less than 321px, if it's red width is   */
 body {
 	font-family: 'PT Serif', serif;
-	background-color: red;
+	background-color: skyblue;
 	color: var(--main-text-color);
 	
 	display: grid;
@@ -20,10 +22,28 @@ body {
 	row-gap: 3rem;
 	
 }
+@media (min-width: 321px){
+	body {
+		grid-template-columns: minmax(2rem, 1fr) minmax(min-content, 42rem) minmax(2rem, 1fr);
+		background-color: red;
+	}
+	html {
+		font-size: 62.5%;
+	}
+}
+@media (min-width: 376px){
+	body {
+		grid-template-columns: minmax(2rem, 1fr) minmax(min-content, 42rem) minmax(2rem, 1fr);
+		background-color: white;
+	}
+	html {
+		font-size: 62.5%;
+	}
+}
 @media (min-width: 426px){
 	body {
 		grid-template-columns: minmax(2rem, 1fr) minmax(min-content, 42rem) minmax(2rem, 1fr);
-		background-color: var(--main-background-color);
+		background-color: coral;
 	}
 	html {
 		font-size: 62.5%;
