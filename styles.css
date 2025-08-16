@@ -33,7 +33,7 @@ grid is two-dimensional: for overall page structure */
 	box-sizing: border-box;
 }
 html {
-	font-size: 62.5%;
+	font-size: 55%;
 }
 body {
 	font-family: 'PT Serif', serif;
@@ -41,15 +41,15 @@ body {
 	color: var(--main-text-color);
 	
 	display: grid;
-	grid-template-columns: minmax(2rem, 1fr) minmax(min-content, 94rem) minmax(2rem, 1fr);
+	grid-template-columns: 2rem  minmax(min-content, 44rem)  2rem;
 	row-gap: 3rem;
 }
-@media (max-width: 640px){
+@media (min-width: 426px){
 	body {
 		grid-template-columns: minmax(2rem, 1fr) minmax(min-content, 94rem) minmax(2rem, 1fr);
 	}
 	html {
-		font-size: 55%;
+		font-size: 62.5%;
 	}
 }
 h1 {
@@ -223,7 +223,7 @@ a:hover {
 	border: 1px solid var(--color-blue);
 	border-radius: 5px;
 	display: block;
-	width: 30rem;
+	width: 20rem;
 	margin: 5px;
 	text-decoration: none;
 }
@@ -280,7 +280,20 @@ dd {
 }
 .table-container table tr td:nth-child(2) {
 	height: 8rem;
-	width: 16rem;
+	width: 8rem;
+}
+.table-container :is(code) {
+	font-size: 1.3rem;
+	text-align: left;
+}
+@media (min-width: 426px){
+	.table-container table tr td:nth-child(2) {
+		height: 8rem;
+		width: 16rem;
+	}
+	.table-container :is(code) {
+		font-size: inherit;
+	}
 }
 .rainbow-gradinent {
 	background: linear-gradient(red, orange, yellow, green, skyblue, blue, purple,);
@@ -332,7 +345,7 @@ ruby {
 	font-size: 200%;
 }
 #kazumi {
-	height: 400px;
+	height: 250px;
 	width: 100%;
 	background-image: url("master-kazumi.jpg");
 	background-size: contain;
@@ -340,14 +353,19 @@ ruby {
 	background-position: center top;
 }
 #narushima {
-	height: 400px;
+	height: 250px;
 	width: 100%;
 	background-image: url("master-narushima.avif");
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: center top;
 }
-
+@media (min-width: 426px){
+	#kazumi, #narushima {
+		height: 400px;
+		width: 100%;
+	}
+}
 
 /* 15.07.2025 */
 #article-fonts span {
@@ -397,7 +415,7 @@ ruby {
 #color-theory img {
 	display: block;
 	margin: 0 auto;
-	min-width: 256px;
+	min-width: 250px;
 	max-width: 300px;
 }
 #color-theory figcaption {
@@ -518,6 +536,9 @@ ruby {
 	transform: translate(-13px, 5px);
 	display: inline-block;
 }
+.d1707 pre {
+	font-size: 0.7em;
+}
 
 
 /* 18.07 */
@@ -580,6 +601,18 @@ ruby {
   transform: translateX(-50%);
   border-radius: 50%;
   box-shadow: 0 0 10px var(--color-white);
+}
+
+@media (max-width: 426px){
+	#moon-orbit
+	{
+		width: 100%;
+		height: 300px;
+	}
+	.space, .earth, .moon, .orbit {
+		scale: 75%;
+	}
+	
 }
 
 
@@ -663,7 +696,7 @@ ruby {
 }
 .d2207 > .pos-rel {
 	position: relative;
-	width: minmax(300px, 100%);
+	width: 100%;
 	height: 500px;
 	background-color: var(--color-coral);
 }
@@ -725,7 +758,14 @@ ruby {
     width: 633px;
   }
 }
-
+@media (max-width: 410px) {
+	#piano {
+		width: 270px;
+	}
+	.keys {
+		width: 230px;
+	}
+}
 
 /* 23.07 */
 
@@ -909,6 +949,17 @@ ruby {
 		height: 185px;
 	}		
 }
+@media (max-width: 410px)
+{
+	.d2507 video {
+		width: 280px;
+		height: 162px;
+	}
+	.d2507 iframe {
+		width: 280px; 
+		height: 162px;
+	}		
+}
 
 
 /* 26.07 */
@@ -936,13 +987,8 @@ ruby {
 	font-weight: bold;
 }
 
-/* Bottom section */
-.bottom {
-	grid-column: 1 / -1;
-}
 
 /* 03.08 */
-/* 26.07 */
 
 .d0308 a:link{
 	color: var(--color-main-text);
@@ -961,7 +1007,11 @@ ruby {
 	cursor: pointer;
 }
 
-#top-link {
+/* Bottom section */
+.bottom {
+	grid-column: 1 / -1;
+}
+#top-link:any-link {
 	position: fixed;
 	top: calc(100vh - 3rem);
 	right: 1rem;
@@ -969,11 +1019,13 @@ ruby {
 	text-decoration: none;
 	font-size: 1.5rem;
 }
-#top-link:visited {
-	color: var(--color-main-text);
-}
 #top-link:hover {
 	background-color: var(--color-red);
 	text-decoration: none;
 	cursor: pointer;
+}
+@media not(hover: hover) {
+	#top-link:any-link {
+		background-color: var(--color-red);
+	}
 }
